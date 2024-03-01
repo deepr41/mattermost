@@ -120,7 +120,7 @@ export default class Logs extends React.PureComponent<Props, State> {
         const {search} = this.state;
         const filteredLogs = this.props.logs.filter((log) => {
             // to be improved
-            return `${log.caller}${log.msg}${log.worker}${log.worker}`.toLowerCase().includes(search.toLowerCase());
+            return `${log.caller}${log.msg}${log.worker}${log.job_id}${log.level}${log.timestamp}`.toLowerCase().includes(search.toLowerCase());
         });
         this.setState({filteredLogs});
     }, 200);
